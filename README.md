@@ -1,4 +1,4 @@
-# EXPRESS MIDDLWARE Plugin for [DocPad](http://docpad.org)
+# Express Caching Middleware Plugin for [DocPad](http://docpad.org)
 
 <!-- BADGES/ -->
 
