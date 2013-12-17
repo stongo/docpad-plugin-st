@@ -1,0 +1,48 @@
+{
+  "name": "docpad-plugin-st",
+  "version": "2.0.1",
+  "description": "Add static caching for Express using the 'st' package",
+  "homepage": "https://github.com/stongo/docpad-plugin-st",
+  "license": {
+    "type": "MIT"
+  },
+  "badges": {
+    "npm": true
+  },
+  "keywords": [
+    "docpad",
+    "docpad-plugin",
+    "st",
+    "cache"
+  ],
+  "author": "Marcus Stong <stongo@gmail.com> (https://github.com/stongo)",
+  "maintainers": [
+    "Marcus Stong <stongo@gmail.com> (https://github.com/stongo)"
+  ],
+  "contributors": [
+    "Marcus Stong <stongo@gmail.com> (https://github.com/stongo)"
+  ],
+  "bugs": {
+    "url": "https://github.com/stongo/docpad-plugin-st/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stongo/docpad-plugin-st.git"
+  },
+  "engines": {
+    "node": ">=0.4",
+    "docpad": "6.x"
+  },
+  "dependencies": {
+    "st": "~0.2.3",
+    "hoek": "~1.2.0"
+  },
+  "devDependencies": {
+    "coffee-script": "~1.6.2",
+    "docpad": ">=6.37 <7"
+  },
+  "main": "./out/st.plugin.js",
+  "readmeFilename": "README.md",
+  "_id": "docpad-plugin-st@2.0.1",
+  "_from": "docpad-plugin-st@~2.0.x"
+}
