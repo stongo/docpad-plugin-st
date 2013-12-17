@@ -1,4 +1,4 @@
-# CRUD REST API Plugin for [DocPad](http://docpad.org)
+# EXPRESS MIDDLWARE Plugin for [DocPad](http://docpad.org)
 
 <!-- BADGES/ -->
 
@@ -53,7 +53,7 @@ plugins:
 
 		dot: true # allow dot-files to be fetched normally, false return 403 for any url with a dot-file part
 
-		passthrough: true # calls next/returns instead of returning a 404 error, false returns a 404 when a file or an index is not found 
+		passthrough: true # calls next/returns instead of returning a 404 error, false returns a 404 when a file or an index is not found
 ```
 
 <!-- HISTORY/ -->
