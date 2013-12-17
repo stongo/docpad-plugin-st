@@ -26,8 +26,8 @@ You can set your own custom st settings in the plugins config
 ```coffee
 plugins:
 	st:
-		path: "src/static/", # resolved against the process cwd
-		url: "static/", # defaults to '/'
+		path: "/out", # resolved against the process cwd
+		url: "/", # defaults to '/'
 		cache: # specify cache:false to turn off caching entirely
 			fd:
 				max: 1000, # number of fd's to hang on to
