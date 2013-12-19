@@ -1,6 +1,6 @@
 {
   "name": "docpad-plugin-st",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Add static caching for Express using the 'st' package",
   "homepage": "https://github.com/stongo/docpad-plugin-st",
   "license": {
@@ -43,6 +43,6 @@
   },
   "main": "./out/st.plugin.js",
   "readmeFilename": "README.md",
-  "_id": "docpad-plugin-st@2.0.1",
+  "_id": "docpad-plugin-st@2.0.2",
   "_from": "docpad-plugin-st@~2.0.x"
 }

@@ -38,7 +38,7 @@ module.exports = (BasePlugin) ->
 	}
 
 	# Define Plugin
-	class RestAPI extends BasePlugin
+	class St extends BasePlugin
 
 		# Plugin name
 		name: 'st'
@@ -56,7 +56,9 @@ module.exports = (BasePlugin) ->
 			# create st mount
 			mount = st(settings)
 
-			return server.use(mount)
+			server.use(mount)
+
+			return
 
 			# Chain
 			@
