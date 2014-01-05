@@ -32,7 +32,7 @@ module.exports = (BasePlugin) ->
 
 		index: "index.html" # true for auto-index, the default, false returns 404's for directories
 
-		dot: true # allow dot-files to be fetched normally, false return 403 for any url with a dot-file part
+		dot: false # allow dot-files to be fetched normally, false return 403 for any url with a dot-file part
 
 		passthrough: true # calls next/returns instead of returning a 404 error, false returns a 404 when a file or an index is not found
 	}
@@ -50,8 +50,7 @@ module.exports = (BasePlugin) ->
 			docpad = @docpad
 			{server} = opts
 			config = @config
-			options = config.st
-			settings = if options then Utility.applyToDefaults(defaults, options) else defaults
+			settings = if config then Utility.applyToDefaults(defaults, config) else defaults
 
 			# create st mount
 			mount = st(settings)
