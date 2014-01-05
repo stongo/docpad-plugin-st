@@ -56,6 +56,9 @@ plugins:
 		passthrough: true # calls next/returns instead of returning a 404 error, false returns a 404 when a file or an index is not found
 ```
 
+## Deployment Notes
+On Heroku, set cache to false. This will disable backend caching, which is unsupported on Heroku. Untested on other hosted platforms
+
 <!-- HISTORY/ -->
 
 ## History
