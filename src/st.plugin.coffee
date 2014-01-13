@@ -7,7 +7,7 @@ module.exports = (BasePlugin) ->
 
 	# Set defaults
 	defaults = {
-		path: "out/", # resolved against the process cwd
+		path: "public_html/", # resolved against the process cwd
 		url: "/", # defaults to '/'
 		cache: # specify cache:false to turn off caching entirely
 			fd:
@@ -34,7 +34,7 @@ module.exports = (BasePlugin) ->
 
 		dot: false # allow dot-files to be fetched normally, false return 403 for any url with a dot-file part
 
-		passthrough: true # calls next/returns instead of returning a 404 error, false returns a 404 when a file or an index is not found
+		passthrough: false # calls next/returns instead of returning a 404 error, false returns a 404 when a file or an index is not found
 	}
 
 	# Define Plugin
@@ -43,8 +43,40 @@ module.exports = (BasePlugin) ->
 		# Plugin name
 		name: 'st'
 
+		# Copy out folder to public html folder after successful site generation
+		generateAfter: (opts, next) ->
+			# Prepare
+			docpad = @docpad
+			docpadConfig = docpad.getConfig()
+			wrench = require('wrench')
+			path = require('path')
+			config = @config
+			staticPath = config.path or defaults.path
+
+			# Set out directory
+			# the trailing / indicates to cp that the files of this directory should be copied over
+			# rather than the directory itself
+			outPath = path.normalize "#{docpadConfig.outPath}"
+			staticPath = path.normalize "#{staticPath}"
+
+			if outPath.slice(-1) is '/'
+				staticPath.slice(0, -1)
+
+			staticPath = path.join process.cwd(), staticPath
+
+			docpad.log "debug", "Copying out folder. outPath: #{outPath}, staticPath: #{staticPath}"
+
+			###ncp outPath, staticPath, (err) ->
+				return next(err) if err
+				docpad.log "Done copying out folder to #{staticPath}"
+				return next()###
+
+			wrench.copyDirRecursive outPath, staticPath, {forceDelete: true}, (err) ->
+				return next(err) if err
+				docpad.log "Done copying out folder to #{staticPath}"
+				return next()
+
 		# Server Extend Event
-		# Add all of our REST Routes
 		serverExtend: (opts) ->
 			plugin = @
 			docpad = @docpad
