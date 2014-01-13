@@ -26,7 +26,7 @@ You can set your own custom st settings in the plugins config
 ```coffee
 plugins:
 	st:
-		path: "/out", # resolved against the process cwd
+		path: "public_html/", # resolved against the process cwd
 		url: "/", # defaults to '/'
 		cache: # specify cache:false to turn off caching entirely
 			fd:
@@ -53,7 +53,7 @@ plugins:
 
 		dot: true # allow dot-files to be fetched normally, false return 403 for any url with a dot-file part
 
-		passthrough: true # calls next/returns instead of returning a 404 error, false returns a 404 when a file or an index is not found
+		passthrough: false # calls next/returns instead of returning a 404 error, false returns a 404 when a file or an index is not found
 ```
 
 ## Deployment Notes
