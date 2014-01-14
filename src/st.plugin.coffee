@@ -44,7 +44,7 @@ module.exports = (BasePlugin) ->
 		name: 'st'
 
 		# Copy out folder to public html folder after successful site generation
-		generateAfter: (opts, next) ->
+		generated: (opts, next) ->
 			# Prepare
 			docpad = @docpad
 			docpadConfig = docpad.getConfig()
